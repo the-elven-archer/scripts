@@ -1,0 +1,15 @@
+--- Rackspace management scripts ---
+This scripts were made to launch and check servers in a Rackspace ServerCloud environment.
+You must check the next prerequisites:
+-	cURL
+-	The file /root/.rackspace/login with the next content:
+<LOGINUSER>	<APIKEY>
+
+Remember to make "0600" the .rackspace folder
+
+You must run rs_get_credentials.sh before start working. This will download the temporary Admin URL and key in a file inside .rackspace
+This credentials expire every 24 Hs.
+
+Questions? the.elven.archer@gmail.com
+
+Peace!
