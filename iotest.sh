@@ -36,6 +36,8 @@ OLD_IFS=$IFS
 # Changing to carriage return (I don't know why this didn't work before)
 IFS="\n"
 
+if [ "$LISTITA" ];
+then
 # For every row in the "strange" sample list...
 for item in $LISTITA
 do
@@ -56,9 +58,17 @@ do
 		#logger -t iostat_check -p local3.info "$BAD_DISK %svctm was higher than $LIMIT percent $QTY times!... Please check!"
 		echo "$BAD_DISK svctm was greater than $LIMIT $QTY times"
 		exit 2
+	else
+		echo "OK|iostat is Happy!"
+		exit 0
         fi
 	
 done
+else
+echo "OK|iostat is Happy!"
+exit 0
+
+fi
 
 #... I've told you that I'm a li'l coward? Restoring the default IFS
 IFS=$OLD_IFS
